@@ -1,4 +1,5 @@
 (function(exports) {
+  
   function Note(text) {
     this.string = text;
   }
@@ -8,5 +9,4 @@
   };
 
   exports.Note = Note;
-
 })(this);
