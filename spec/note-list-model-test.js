@@ -1,4 +1,5 @@
 function testListNotesIsAnEmptyArray() {
+  var list = new NoteList();
   assert.isTrue(list.getAllNotes() instanceof Array);
   assert.isTrue(list.getAllNotes().length === 0);
 }
