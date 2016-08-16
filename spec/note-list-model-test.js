@@ -4,6 +4,7 @@ function testListNotesIsAnEmptyArray() {
 }
 
 function testCreatingAndStoringNotes() {
+  var list = new NoteList();
   list.createNewNote("some text");
   list.createNewNote("some different text");
   assert.isTrue(list.getAllNotes()[0] instanceof Note);
@@ -11,6 +12,5 @@ function testCreatingAndStoringNotes() {
   assert.areEqual(list.getAllNotes()[1].returnText(), "some different text");
 }
 
-var list = new NoteList();
 testListNotesIsAnEmptyArray();
 testCreatingAndStoringNotes();
