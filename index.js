@@ -7,3 +7,9 @@ notelist.createNewNote("second note");
 notelist.createNewNote("third note");
 notelist.createNewNote("this is the fourth and final note, and there is a lot more to this note");
 notecontroller.updateHTML();
+
+function showNoteForCurrentPage(){
+  notecontroller.showNote(notecontroller.getNoteFromUrl(window.location));
+  notecontroller.updateHTML();
+}
+window.addEventListener("hashchange", showNoteForCurrentPage);

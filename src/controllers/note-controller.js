@@ -5,7 +5,7 @@
   }
 
   NoteController.prototype._getAppDiv = function() {
-    return document.getElementById('app');
+    return document.getElementById("app");
   };
 
   NoteController.prototype.updateHTML = function() {
@@ -17,8 +17,13 @@
   };
 
   NoteController.prototype.showNote = function(id){
+    console.log(this._view);
+    console.log(this._view.listOfNotes);
+    console.log(id);
+    console.log(this._view.listOfNotes.getNoteById(id)); //THIS IS THE BUG
     var singleView = new SingleNoteView(this._view.listOfNotes.getNoteById(id));
-    document.getElementById('app').innerHTML = singleView.singleNoteHtml();
+    console.log(singleView);
+    document.getElementById("app").innerHTML = singleView.singleNoteHtml();
   };
 
   exports.NoteController = NoteController;
