@@ -14,7 +14,7 @@
     var stringArray = [];
     someList.getAllNotes().forEach(function(note) {
       stringArray.push("<li><div>" + note.string + "</div></li>");
-    })
+    });
     return stringArray.join("");
   };
 
