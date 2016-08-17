@@ -1,4 +1,5 @@
 function testNoteController() {
+  console.log('Test Note Controller');
   var newList = new NoteList();
   newList.createNewNote("winter is coming");
   newList.createNewNote("hear me roar");
