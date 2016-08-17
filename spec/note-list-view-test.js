@@ -19,5 +19,14 @@ function testViewingNoteList() {
   assert.isTrue(listView.turnInHtml() === "<ul><li><div>winter is coming</div></li><li><div>hear me roar</div></li></ul>");
 }
 
-testViewingEmptyHtmlList()
+function testViewing20CharsInNoteList() {
+  var list = new NoteList();
+  list.createNewNote("hear me roar, hear me roar, hear me roar");
+  var listView = new ListView(list);
+  assert.isTrue(listView.turnInHtml() === "<ul><li><div>hear me roar, hear m</div></li></ul>");
+}
+
+
+testViewingEmptyHtmlList();
 testViewingNoteList();
+testViewing20CharsInNoteList();

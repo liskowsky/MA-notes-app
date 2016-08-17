@@ -13,7 +13,7 @@
   ListView.prototype.listingFunction = function (someList) {
     var stringArray = [];
     someList.getAllNotes().forEach(function(note) {
-      stringArray.push("<li><div>" + note.string + "</div></li>");
+      stringArray.push("<li><div>" + note.string.substr(0,20) + "</div></li>");
     });
     return stringArray.join("");
   };
