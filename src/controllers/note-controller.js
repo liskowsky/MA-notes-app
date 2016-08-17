@@ -18,7 +18,7 @@
 
   NoteController.prototype.showNote = function(id){
     var singleView = new SingleNoteView(this._view.listOfNotes.getNoteById(id));
-    document.getElementById('app').innerHTML = singleView.getHTML();
+    document.getElementById('app').innerHTML = singleView.singleNoteHtml();
   };
 
   exports.NoteController = NoteController;
