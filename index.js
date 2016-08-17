@@ -10,6 +10,6 @@ notecontroller.updateHTML();
 
 function showNoteForCurrentPage(){
   notecontroller.showNote(notecontroller.getNoteFromUrl(window.location));
-  notecontroller.updateHTML();
+  //notecontroller.updateHTML();
 }
 window.addEventListener("hashchange", showNoteForCurrentPage);

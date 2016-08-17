@@ -17,13 +17,9 @@
   };
 
   NoteController.prototype.showNote = function(id){
-    console.log(this._view);
-    console.log(this._view.listOfNotes);
-    console.log(id);
-    console.log(this._view.listOfNotes.getNoteById(id)); //THIS IS THE BUG
-    var singleView = new SingleNoteView(this._view.listOfNotes.getNoteById(id));
-    console.log(singleView);
-    document.getElementById("app").innerHTML = singleView.singleNoteHtml();
+    //console.log(this._view.listOfNotes.getNoteById(id)); //THIS IS THE BUG
+    var singleView = new SingleNoteView(this._view.listOfNotes.allNotes[id]);
+    document.getElementById("app").innerHTML += singleView.singleNoteHtml();
   };
 
   exports.NoteController = NoteController;
