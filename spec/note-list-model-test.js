@@ -13,5 +13,17 @@ function testCreatingAndStoringNotes() {
   assert.areEqual(list.getAllNotes()[1].returnText(), "some different text");
 }
 
+function testGettingANoteByItsID() {
+  console.log("TESTING GETING NOTE BY ID")
+  var noteOne = "first text";
+  var noteTwo = "second text";
+  var list = new NoteList();
+  list.createNewNote(noteOne);
+  list.createNewNote(noteTwo);
+  var firstId = list.getAllNotes()[0].noteID;
+  assert.isTrue(list.getNoteById(firstId).returnText() === noteOne);
+}
+
 testListNotesIsAnEmptyArray();
 testCreatingAndStoringNotes();
+testGettingANoteByItsID();

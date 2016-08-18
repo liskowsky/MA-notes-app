@@ -6,18 +6,34 @@
 //Handles a note list model that has no notes, one note or several notes.
 
 function testViewingEmptyHtmlList() {
+  console.log('Test Viewing Empty Html List')
   var list = new NoteList();
   var listView = new ListView(list);
   assert.isTrue(listView.turnInHtml() === "<ul></ul>");
 }
 
 function testViewingNoteList() {
+  console.log('Test Viewing Note List');
   var list = new NoteList();
   list.createNewNote("winter is coming");
   list.createNewNote("hear me roar");
   var listView = new ListView(list);
-  assert.isTrue(listView.turnInHtml() === "<ul><li><div>winter is coming</div></li><li><div>hear me roar</div></li></ul>");
+  var html = "<ul><li><a href=\"#" +
+      list.getAllNotes()[0].noteID + "\"><div>winter is coming</div></a></li><li><a href=\"#" +
+      list.getAllNotes()[1].noteID + "\"><div>hear me roar</div></a></li></ul>";
+  assert.isTrue(listView.turnInHtml() === html);
 }
 
-testViewingEmptyHtmlList()
+function testViewing20CharsInNoteList() {
+  console.log('Test Viewing 20 Chars In Note List')
+  var list = new NoteList();
+  list.createNewNote("hear me roar, hear me roar, hear me roar");
+  var listView = new ListView(list);
+  assert.isTrue(listView.turnInHtml() === "<ul><li><a href=\"#" +
+      list.getAllNotes()[0].noteID + "\"><div>hear me roar, hear m</div></a></li></ul>");
+}
+
+
+testViewingEmptyHtmlList();
 testViewingNoteList();
+testViewing20CharsInNoteList();

@@ -9,10 +9,16 @@
 
   NoteList.prototype.getAllNotes = function () {
     return this.allNotes;
-    //for (var i=0; i<this.notes.length; i++ ) {
-      //console.log(this.notes[i]);
-      //console.log(this.notes[i].returnText()); -> prints text from Note
-    //}
+  };
+
+  NoteList.prototype.getNoteById = function (id) {
+    var noteFound;
+    this.allNotes.forEach(function(note) {
+      if(note.noteID === id) {
+        noteFound = note;
+      }
+    });
+    return noteFound;
   };
 
   exports.NoteList = NoteList;

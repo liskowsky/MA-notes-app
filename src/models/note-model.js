@@ -1,6 +1,8 @@
 (function(exports) {
-  
+  var noteIDCounter = 0;
+
   function Note(text) {
+    this.noteID = noteIDCounter++;
     this.string = text;
   }
 
