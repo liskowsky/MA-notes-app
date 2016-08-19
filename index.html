@@ -5,6 +5,12 @@
     <title>title</title>
   </head>
   <body>
+    <form action="#notes" method="POST" target="_self">
+      <label note="note">Add Note <br>
+        <textarea name="note" id="text"></textarea>
+      </label> <br>
+      <button type="submit" name="submit">Submit</button>
+    </form>
     <div id="app">Hello</div>
     <div id="notes"></div>
     <script src="src/models/note-model.js"></script>
